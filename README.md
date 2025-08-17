@@ -72,8 +72,8 @@ This project is a secure, role-sensitive chatbot that answers medical queries us
 1. Clone the repo:
 
    ```bash
-   git clone <URL>
-   cd <Project Directory>
+   git clone git@github.com:SHWACODING/End-To-End-Medical-Assistant.git
+   cd End-To-End-Medical-Assistant
    ```
 
 2. Create a `.env` file:
