@@ -20,8 +20,8 @@ This project is a secure, role-sensitive chatbot that answers medical queries us
 
 ## Deployed URL
 
-![Frontend] < URL >
-![Backend] < URL >
+![Frontend] [APP](https://rbsa-medical-bot.streamlit.app/)
+![Backend] [API](https://rbac-medicalassistant.onrender.com/)
 
 ## ⚙️ Tech Stack
 
