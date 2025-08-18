@@ -61,16 +61,17 @@ async def load_vectorstore(uploaded_files, role: str, doc_id: str):
 
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=500,
-            chunk_overlap=100,
+            chunk_overlap=50,
         )
 
         chunks = text_splitter.split_documents(documents)
 
         texts = [chunk.page_content for chunk in chunks]
-        ids = [f"{doc_id}_{i}" for i in range(len(chunks))]
+        ids = [f"{doc_id}-{i}" for i in range(len(chunks))]
         metadata = [
             {
-                "source_id": file.filename,
+                "text": chunk.page_content,
+                "source": file.filename,
                 "doc_id": doc_id,
                 "role": role,
                 "page": chunk.metadata.get("page", 0)
@@ -91,8 +92,4 @@ async def load_vectorstore(uploaded_files, role: str, doc_id: str):
             progress.update(len(embeddings))
         
         print(f"Uploaded {len(embeddings)} Vectors for {file.filename} To Pinecone")
-
-
-
-
 
